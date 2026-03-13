@@ -1,0 +1,19 @@
+name: blank
+
+on:
+  push:
+
+jobs:
+  attempt:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        loop: ["blue", "harbour", "competition", "infer", "finish"]
+        spray: ["frog", "pace", "pregnant", "refusal"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java -jar TT
